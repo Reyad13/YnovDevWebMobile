@@ -33,6 +33,35 @@
       http-equiv="Content-Security-Policy"
       content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"
     /> -->
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <script>
+      window.OneSignal = window.OneSignal || [];
+      OneSignal.push(function() {
+        OneSignal.init({
+          appId: "aa332f91-1b12-4a00-974a-7641b5c4c620",
+        });
+      });
+    </script>
+
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <script>
+      var OneSignal = window.OneSignal || [];
+      var initConfig = {
+        appId: "aa332f91-1b12-4a00-974a-7641b5c4c620",
+        notifyButton: {
+          enable: true,
+        },
+      };
+      OneSignal.push(function () {
+        OneSignal.SERVICE_WORKER_PARAM = { scope: "/push/onesignal/" };
+        OneSignal.SERVICE_WORKER_PATH = "push/onesignal/OneSignalSDKWorker.js";
+        OneSignal.SERVICE_WORKER_UPDATER_PATH =
+          "push/onesignal/OneSignalSDKUpdaterWorker.js";
+        OneSignal.init(initConfig);
+      });
+    </script>
+
+    
     <link rel="manifest" href="manifest.json" />
     <script>
       window.addEventListener("load", () => {

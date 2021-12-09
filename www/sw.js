@@ -1,5 +1,4 @@
 /** VARS */
-const CACHE_NAME = "offline";
 const OFFLINE_URL = "offline.html";
 
 /** FUNCTIONS */
